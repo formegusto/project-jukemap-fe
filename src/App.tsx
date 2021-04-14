@@ -1,10 +1,12 @@
 import React from 'react';
+import { Route, Switch } from 'react-router';
+import IntroComponent from './components/IntroComponent';
 
 function App() {
   return (
-    <>
-      Project-JukeMap
-    </>
+    <Switch>
+      <Route path="/" component={IntroComponent} exact/>
+    </Switch>
   );
 }
 
