@@ -1,11 +1,17 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import IntroComponent from './components/IntroComponent';
+import IntroContainer from './containers/IntroContainer';
+
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
 
 function App() {
   return (
     <Switch>
-      <Route path="/" component={IntroComponent} exact/>
+      <Route path="/" component={IntroContainer} exact/>
     </Switch>
   );
 }

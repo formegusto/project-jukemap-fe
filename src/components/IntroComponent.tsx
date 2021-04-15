@@ -1,11 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import { FullScreen } from '../style/Screen';
 import { WhatTheHell } from '../style/Palette';
 import { HiMelody } from '../style/Font';
 import { RotateBoxCover } from '../animations/BoxAni';
 
-function IntroComponent() {
+type Props = {
+    changeIsMain: () => void;
+}
+
+function IntroComponent(props: Props) {
+    const refScreen = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         const $cover = document.querySelector(`${BoxCover}`);
         
@@ -15,12 +21,28 @@ function IntroComponent() {
             if($box.length !== 0){
                 ($box[0] as HTMLDivElement).style.marginRight = ".5rem";
                 ($box[1] as HTMLDivElement).style.marginRight = ".5rem";
+
+                ($box[0]).addEventListener('transitionend', () => {
+                    console.log("두번 걸리는 둡")
+                    if(refScreen.current) {
+                        refScreen.current.style.transform = "translateY(100vh)";
+                        refScreen.current.addEventListener('transitionend', () => {
+                            props.changeIsMain();
+                        })
+                    }
+                });
             }
         })
-    }, []);
+    }, [props]);
 
     return (
-        <FullScreen>
+        <FullScreen style={{
+            position: "fixed",
+            transition: ".7s",
+            zIndex: 2
+        }}
+            ref={refScreen}
+        >
             <IntroBlock>
                 <BoxBlock>
                     <Box>
