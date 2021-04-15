@@ -19,8 +19,8 @@ function IntroComponent(props: Props) {
             const $box = document.querySelectorAll(`${Box}`);
             
             if($box.length !== 0){
-                ($box[0] as HTMLDivElement).style.marginRight = ".5rem";
-                ($box[1] as HTMLDivElement).style.marginRight = ".5rem";
+                ($box[0] as HTMLDivElement).style.marginRight = ".75rem";
+                ($box[1] as HTMLDivElement).style.marginRight = ".75rem";
 
                 ($box[0]).addEventListener('transitionend', () => {
                     console.log("두번 걸리는 둡")
@@ -39,7 +39,7 @@ function IntroComponent(props: Props) {
         <FullScreen style={{
             position: "fixed",
             transition: ".7s",
-            zIndex: 2
+            zIndex: 3
         }}
             ref={refScreen}
         >
@@ -119,6 +119,7 @@ const BoxCover = styled.div`
 
     transform-origin: 50% 100%;
 
+    border-width: 2px;
     border-style: solid;
     border-color: ${WhatTheHell[3]};
 

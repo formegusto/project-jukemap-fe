@@ -1,10 +1,10 @@
 import React from 'react';
 
-function MainContainer() {
+function JukeContainer() {
     return (
         <>
         </>
-    )
+    );
 }
 
-export default MainContainer;
+export default JukeContainer;
