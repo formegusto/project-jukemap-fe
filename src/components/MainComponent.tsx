@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { Ref, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { WhatTheHell } from '../style/Palette';
 import { FullScreen } from '../style/Screen';
@@ -10,11 +10,10 @@ import { AiOutlineLike } from 'react-icons/ai';
 
 type Props = {
     changeJukeContent: (content:any) => void;
+    refScreen: Ref<HTMLDivElement>;
 }
 
 function MainComponent(props: Props) {
-    const refScreen = useRef<HTMLDivElement>(null);
-
     useEffect(() => {
         let container = document.getElementById('map');
         let options = {
@@ -28,9 +27,7 @@ function MainComponent(props: Props) {
       }, []);
 
       const onJuke = useCallback((content: any) => {
-        if(refScreen.current)
-            refScreen.current.style.transform = "translateY(100vh)";
-            props.changeJukeContent(content);
+        props.changeJukeContent(content);
       }, [props]);
 
     return (
@@ -39,7 +36,7 @@ function MainComponent(props: Props) {
             transition: ".7s",
             zIndex: 2
         }}
-            ref={refScreen}
+            ref={props.refScreen}
         >
             <MainBlock>
                 <Map id="map"/>
