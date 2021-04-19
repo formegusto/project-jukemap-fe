@@ -11,6 +11,7 @@ export const ContentDatas = [
             + "&nbsp;그러다가 바라본 주변에는 나를 아껴주는 사람들이 남아있었고, "
             + "그들에게 안 좋은 쪽으로 변화해오던 나를 여전히 지켜주던 사람들이 있었다.<br/><br/>",
         img: whosmind,
+        position: new window.kakao.maps.LatLng(33.450701, 126.570667),
     },
     {
         title: "이유없이 지쳤던 그 어느 날",
@@ -25,6 +26,7 @@ export const ContentDatas = [
             + "&nbsp;생각만해도 행복해진다. 가끔씩 오는 이 이유없는 피곤함과 게으름은 나에게 행복을 가져다준다.<br/><br/>"
             + "&nbsp;그렇게 생각해야지 ㅋㅋㅋㅋ 내일의 일은 내일의 나에게 맡긴다ㅋㅋㅋ 다들 잘자요 ㅋㅋ",
         img: imsotired,
+        position: new window.kakao.maps.LatLng(33.448901, 126.569467),
     },
     {
         title: "나는 그런 사람 아닌데",
@@ -32,5 +34,6 @@ export const ContentDatas = [
             + "&nbsp;실제로 남들이 솔직하게 얘기하는 나의 모습을 듣게 되어서 흥미로웠다.<br/>"
             + "&nbsp;내가 그런 사람이었구나. 싶기도 했고, 하지만 안 좋은 얘기들만 가득했던 오늘의 이야기에 나는 무척 피곤해졌다.<br/>",
         img: believe,
+        position: new window.kakao.maps.LatLng(33.450901, 126.572667),
     },
 ];

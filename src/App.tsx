@@ -1,12 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import IntroContainer from './containers/IntroContainer';
+import MainContainer from './containers/MainContainer';
+import { FullScreen } from './style/Screen';
 
 function App() {
   return (
-    <Switch>
-      <Route path="/" component={IntroContainer} exact/>
-    </Switch>
+    <FullScreen>
+      <Switch>
+          <Route path="/" component={MainContainer} />
+      </Switch>
+    </FullScreen>
   );
 }
 
