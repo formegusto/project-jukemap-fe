@@ -1,44 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
-import whosmind from '../assets/albumarts/whosmind.jpg';
 import { HiMelody, NotoSansKR } from '../style/Font';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsBookmark, BsBoxArrowDown } from 'react-icons/bs';
 
 type Props = {
     refScreen: React.Ref<HTMLDivElement>;
+    refSphere: React.Ref<HTMLDivElement>;
     closeJuke: () => void;
+    content: any;
 }
 
 function JukeComponent(props: Props) {
     return (
         <JukeBlock ref={props.refScreen}>
-            <JukeArt src={whosmind} alt="jukeart"/>
-            <JukeArtWrap/>
-            <JukeContentBlock>
-                <Title>
-                <JukeHeader>
-                    <Jukist>
-                        2021.03.16 by @hi_thniii
-                    </Jukist>
-                    <HeaderIconBlock>
-                        <AiOutlineHeart />
-                        <BsBookmark />
-                    </HeaderIconBlock>
-                </JukeHeader>
-                    #제목
-                </Title>
-                <LineAudioBar/>
-                <Content>
-                    내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
-                    내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용 내용
-                </Content>
-                <Line/>
-                <JukeFooter>
-                    <BsBoxArrowDown 
-                        onClick={props.closeJuke}/>
-                </JukeFooter>
-            </JukeContentBlock>
+            {
+                props.content && 
+                <>
+                    <JukeArt src={props.content.img} alt="jukeart"/>
+                    <JukeArtWrap/>
+                    <JukeContentBlock>
+                        <Title>
+                        <JukeHeader>
+                            <Jukist>
+                                2021.03.16 by @hi_thniii
+                            </Jukist>
+                            <HeaderIconBlock>
+                                <AiOutlineHeart />
+                                <BsBookmark />
+                            </HeaderIconBlock>
+                        </JukeHeader>
+                            {`#${props.content.title}`}
+                        </Title>
+                        <LineAudioBar>
+                            <AudioSphere ref={props.refSphere}/>
+                        </LineAudioBar>
+                        <Content dangerouslySetInnerHTML={{__html:props.content.content}}/>
+                        <Line/>
+                        <JukeFooter>
+                            <BsBoxArrowDown 
+                                onClick={props.closeJuke}/>
+                        </JukeFooter>
+                    </JukeContentBlock>
+                </>
+            }
         </JukeBlock>
     );
 }
@@ -56,6 +61,21 @@ const JukeBlock = styled.div`
     transform: translateY(-100vh);
 `;
 
+const AudioSphere = styled.div`
+    position: absolute;
+
+    top: -0.5rem;
+    
+    transition: .3s;
+    width: 1rem;
+    height: 1rem;
+    
+    background-color: rgb(255,255,255);
+
+    border-radius: 100%;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
 const JukeHeader = styled.header`
     display: flex;
 
@@ -64,7 +84,7 @@ const JukeHeader = styled.header`
 
     width: 100%;
 
-    padding: 20px 12px 0 8px;
+    padding: 0 12px 0 8px;
     box-sizing: border-box;
 `
 
@@ -169,6 +189,8 @@ const Content = styled.h2`
 `;
 
 const LineAudioBar = styled.div`
+    position: relative;
+
     width: 100%;
     height: 1px;
 

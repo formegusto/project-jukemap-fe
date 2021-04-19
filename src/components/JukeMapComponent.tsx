@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import RadiusBlock from '../atoms/RadiusBlock';
 import { ContentDatas } from '../dummyData';
 import { MakeCustomOverlayContent } from '../lib/MakeCustomOverlay';
 import '../style/Overlay.css';
@@ -43,8 +44,16 @@ function JukeMapComponent(props: Props) {
     return (
         <JukeMapBlock 
             ref={props.refScreen} 
-            id="map">
-
+            >
+            <JukeMap id="map"/>
+            <ContentsBlock>
+                <RadiusBlock>
+                    h
+                </RadiusBlock>
+                <RadiusBlock>
+                    +
+                </RadiusBlock>
+            </ContentsBlock>
         </JukeMapBlock>
     );
 }
@@ -54,6 +63,24 @@ const JukeMapBlock = styled.div`
 
     width: 100%;
     height: 100%;
+`;
+
+const JukeMap = styled.div`
+    width: 100%;
+    height: 100%;
+`;
+
+const ContentsBlock = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    z-index: 2;
+
+    padding: 1rem;
+    & > * {
+        margin: 0 0 1rem 0;
+    }
 `;
 
 export default JukeMapComponent;
