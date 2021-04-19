@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HiMelody, NotoSansKR } from '../style/Font';
+import { HiMelody, NotoSansKR } from '../..//style/Font';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsBookmark, BsBoxArrowDown } from 'react-icons/bs';
 

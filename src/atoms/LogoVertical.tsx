@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { HiMelody } from '../style/Font';
+import { WhatTheHell } from '../style/Palette';
 
-interface Props extends React.HTMLAttributes<HTMLDivElement>{}
-
-function Logo(props: Props) {
+function LogoVertical(props: React.HTMLAttributes<HTMLDivElement>){
     return (
-        <StyledDiv>
+        <StyledDiv {...props}>
             <TitleBlock>
                 <LetterBlock>
                     <Letter>
@@ -23,50 +22,35 @@ function Logo(props: Props) {
                         맵
                     </Letter>
                 </LetterBlock>
-            </TitleBlock> 
-            <CopyRightBlock>
-                Copyright &copy; 2021 by 경혜 태헌
-            </CopyRightBlock>
+            </TitleBlock>
         </StyledDiv>
     );
 }
 
 const StyledDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-
     ${HiMelody};
-
+    font-size: 48px;
     box-shadow: 4px 4px 4px rgba(0,0,0,.25);
 `;
 
-const CopyRightBlock = styled.div`
-    border: 2px solid black;
-    border-top: none;
-
-    padding: .25rem .25rem;
-    text-align: end;
-`;
-
 const TitleBlock = styled.div`
-    display: flex;
-
-    border: 2px solid black;
     box-sizing: border-box;
+    border: 2px solid black;
+    border-bottom: none;
 
-    font-size: 48px;
-
-    & > div:not(:last-child) {
-        border-right: 2px solid black;
+    & > div {
+        border-bottom: 2px solid black;
     }
+
+    background-color: ${WhatTheHell[0]};
 `;
 
 const LetterBlock = styled.div`
     width: 100px;
     height: 100px;
 
-    padding: .5rem 0;
     box-sizing: border-box;
+    padding: 0 .5rem;
 `;
 
 const Letter = styled.h1`
@@ -75,10 +59,9 @@ const Letter = styled.h1`
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
 
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
 `;
 
-export default Logo;
+export default LogoVertical;

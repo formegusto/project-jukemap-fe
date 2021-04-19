@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import AuthForm from '../atoms/AuthForm';
+import AuthForm from '../../atoms/AuthForm';
 
 function JoinComponent() {
     return (

@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { Montserrat } from '../style/Font';
 import { WhatTheHell } from '../style/Palette';
 
-interface Props extends React.HTMLProps<HTMLDivElement> {}
+interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
 function RadiusBlock(props: Props) {
     return (
-        <StyledDiv>
+        <StyledDiv {...props}>
             {props.children}
         </StyledDiv>
     );

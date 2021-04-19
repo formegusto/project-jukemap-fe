@@ -1,8 +1,8 @@
 import React, { useCallback, useRef, useState } from 'react';
-import JukeComponent from '../components/JukeComponent';
-import JukeMapComponent from '../components/JukeMapComponent';
-import SplashComponent from '../components/SplashComponent';
-import audio from "../assets/music/paul_sleepingBeauty.mp3";
+import JukeComponent from '../../components/main/JukeComponent';
+import JukeMapComponent from '../../components/main/JukeMapComponent';
+import SplashComponent from '../../components/main/SplashComponent'
+import audio from "../../assets/music/paul_sleepingBeauty.mp3";
 
 function MainContainer() {
     const refJukeScreen = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ function MainContainer() {
 
     return (
         <>
-            <audio ref={refAudio} src={audio} autoPlay />
+            <audio ref={refAudio} src={audio}/>
             <SplashComponent />
             <JukeMapComponent 
                 refScreen={refJukeMapScreen}

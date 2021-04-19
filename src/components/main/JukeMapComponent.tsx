@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { RouteComponentProps, withRouter } from 'react-router';
 import styled from 'styled-components';
-import RadiusBlock from '../atoms/RadiusBlock';
-import { ContentDatas } from '../dummyData';
-import { MakeCustomOverlayContent } from '../lib/MakeCustomOverlay';
-import '../style/Overlay.css';
+import LogoVertical from '../../atoms/LogoVertical';
+import RadiusBlock from '../../atoms/RadiusBlock';
+import { ContentDatas } from '../../dummyData';
+import { MakeCustomOverlayContent } from '../../lib/MakeCustomOverlay';
+import '../../style/Overlay.css';
 
-type Props = {
+interface Props extends RouteComponentProps {
     refScreen: React.Ref<HTMLDivElement>;
     onJuke: (content: any) => void;
 }
@@ -46,8 +48,11 @@ function JukeMapComponent(props: Props) {
             ref={props.refScreen} 
             >
             <JukeMap id="map"/>
+            <LogoBlock>
+                <LogoVertical className="logo"/>
+            </LogoBlock>
             <ContentsBlock>
-                <RadiusBlock>
+                <RadiusBlock onClick={() => props.history.push("/auth")}>
                     h
                 </RadiusBlock>
                 <RadiusBlock>
@@ -57,6 +62,20 @@ function JukeMapComponent(props: Props) {
         </JukeMapBlock>
     );
 }
+
+const LogoBlock = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 2;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    & > .logo {
+
+    }
+`;
 
 const JukeMapBlock = styled.div`
     position: fixed;
@@ -83,4 +102,4 @@ const ContentsBlock = styled.div`
     }
 `;
 
-export default JukeMapComponent;
+export default withRouter(JukeMapComponent);

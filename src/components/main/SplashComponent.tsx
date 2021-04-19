@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HiMelody } from '../style/Font';
-import { Hype } from '../style/Palette';
+import { HiMelody } from '../../style/Font';
+import { Hype } from '../../style/Palette';
 
 function SplashComponent() {
     return (
