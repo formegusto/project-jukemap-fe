@@ -1,6 +1,9 @@
 import whosmind from './assets/albumarts/whosmind.jpg';
 import imsotired from './assets/albumarts/imsotired.jpg';
 import believe from './assets/albumarts/believe.jpg';
+import playbutton from './assets/icons/playbutton.png';
+
+export const PlayIcon = playbutton;
 
 export const ContentDatas = [
     {

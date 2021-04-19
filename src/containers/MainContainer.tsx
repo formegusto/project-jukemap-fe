@@ -6,9 +6,9 @@ import SplashComponent from '../components/SplashComponent';
 function MainContainer() {
     return (
         <>
-            <JukeComponent />
             <SplashComponent />
             <JukeMapComponent />
+            <JukeComponent />
         </>
     );
 }
