@@ -5,9 +5,14 @@ import { HiMelody, NotoSansKR } from '../style/Font';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsBookmark, BsBoxArrowDown } from 'react-icons/bs';
 
-function JukeComponent() {
+type Props = {
+    refScreen: React.Ref<HTMLDivElement>;
+    closeJuke: () => void;
+}
+
+function JukeComponent(props: Props) {
     return (
-        <JukeBlock>
+        <JukeBlock ref={props.refScreen}>
             <JukeArt src={whosmind} alt="jukeart"/>
             <JukeArtWrap/>
             <JukeContentBlock>
@@ -30,7 +35,8 @@ function JukeComponent() {
                 </Content>
                 <Line/>
                 <JukeFooter>
-                    <BsBoxArrowDown />
+                    <BsBoxArrowDown 
+                        onClick={props.closeJuke}/>
                 </JukeFooter>
             </JukeContentBlock>
         </JukeBlock>
@@ -45,6 +51,9 @@ const JukeBlock = styled.div`
 
     width: 100%;
     height: 100%;
+
+    transition: .7s;
+    transform: translateY(-100vh);
 `;
 
 const JukeHeader = styled.header`

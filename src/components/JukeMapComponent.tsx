@@ -4,7 +4,12 @@ import { ContentDatas } from '../dummyData';
 import { MakeCustomOverlayContent } from '../lib/MakeCustomOverlay';
 import '../style/Overlay.css';
 
-function JukeMapComponent() {
+type Props = {
+    refScreen: React.Ref<HTMLDivElement>;
+    onJuke: (content: any) => void;
+}
+
+function JukeMapComponent(props: Props) {
     const [jukeMap, setJukeMap] = useState<any>(null);
 
     useEffect(() => {
@@ -22,17 +27,23 @@ function JukeMapComponent() {
             ContentDatas.forEach((content) => {
                 const customOverlay = new window.kakao.maps.CustomOverlay({
                     position: content.position,
-                    content: MakeCustomOverlayContent(content),
+                    content: MakeCustomOverlayContent(content, props.onJuke),
                     xAnchor: 0.5,
                     yAnchor: 0.5,
                 });
                 customOverlay.setMap(jukeMap);
+                
+                const jukeblocks = document.querySelectorAll('.jukeblock');
+                jukeblocks[jukeblocks.length - 1].addEventListener('click', () => props.onJuke(content));
+                
             });
         }
-    }, [jukeMap]);
+    }, [jukeMap, props]);
 
     return (
-        <JukeMapBlock id="map">
+        <JukeMapBlock 
+            ref={props.refScreen} 
+            id="map">
 
         </JukeMapBlock>
     );
