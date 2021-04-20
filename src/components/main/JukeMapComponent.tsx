@@ -55,7 +55,7 @@ function JukeMapComponent(props: Props) {
                 <RadiusBlock onClick={() => props.history.push("/auth")}>
                     h
                 </RadiusBlock>
-                <RadiusBlock>
+                <RadiusBlock onClick={() => props.history.push("/juke")}>
                     +
                 </RadiusBlock>
             </ContentsBlock>

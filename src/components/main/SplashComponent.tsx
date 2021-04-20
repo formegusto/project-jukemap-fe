@@ -1,30 +1,69 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { HiMelody } from '../../style/Font';
-import { Hype } from '../../style/Palette';
+import { Hype, WhatTheHell } from '../../style/Palette';
+import iamformegusto from '../../assets/icons/iamformegusto.png';
+import { LeftLineAni, RightLineAni } from '../../animations/LineAni';
+import { BoxFadeIn, FadeInMove, FadeInMoveBottom } from '../../animations/BoxAni';
 
-function SplashComponent() {
+type Props = {
+    refScreen: React.Ref<HTMLDivElement>;
+    refIcon: React.Ref<HTMLDivElement>;
+}
+
+function SplashComponent(props: Props) {
     return (
-        <SplashBlock>
+        <SplashBlock
+            ref={props.refScreen}
+        >
             <ContentBlock>
                 <LogoBlock>
-                    <LogoItem>
+                    <LogoItem className="item">
                         주
                     </LogoItem>
-                    <LogoItem>
+                    <LogoItem className="item">
                         크
                     </LogoItem>
-                    <LogoItem>
+                    <LogoItem className="item">
                         맵
                     </LogoItem>
+                    <LogoVerticalLine className="line left"/>
+                    <LogoVerticalLine className="line right"/>
                 </LogoBlock>
-                <CopyRight>
-                    Copyright &copy; 2021 by 경혜 태헌
-                </CopyRight>
+                <RightBlock>
+                    <IconBlock
+                        ref={props.refIcon}
+                    >
+                        <img src={iamformegusto} alt='logo 넣을 거 없어서 넣었음' />
+                    </IconBlock>
+                    <CopyRight>
+                        Copyright &copy; 2021 by 경혜 태헌
+                    </CopyRight>
+                </RightBlock>
             </ContentBlock>
         </SplashBlock>
     );
 }
+
+const IconBlock = styled.div`
+    flex: 1;
+
+    ${css`
+        animation: ${FadeInMoveBottom} 1.75s forwards;
+    `}
+
+    & > img {
+        width: 250px;
+        height: 250px;
+    }
+`;
+const RightBlock = styled.div`
+    margin: 0 0 0 1.5rem;
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+`;
 
 const SplashBlock = styled.div`
     position: fixed;
@@ -36,22 +75,60 @@ const SplashBlock = styled.div`
     justify-content: center;
     align-items: center;
 
+    transition: .55s;
+    background-color: ${WhatTheHell[0]};
+
     ${HiMelody};
 `;
 
 const ContentBlock = styled.div`
     display: flex;
-
-    flex-direction: column;
-    
 `;
 
 const LogoBlock = styled.div`
-    display: flex;
+    overflow: hidden;
 
-    & > div:not(:last-child) {
-        margin-right: 21px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid ${Hype[3]};
+    border-bottom: none;
+
+    ${css`
+        animation: ${BoxFadeIn} 1.5s forwards;
+    `}
+
+    & > .item {
+        border-bottom: 2px solid black;
     }
+
+    & > .line.left {
+        left: .5rem;
+        ${css`
+            animation: ${LeftLineAni} 1s forwards;
+        `}
+    }
+
+    & > .line.right {
+        right: .5rem;
+        transform: translateY(-100%);
+        ${css`
+            animation: ${RightLineAni} 1s forwards;
+        `}
+    }
+`;
+
+const LogoVerticalLine = styled.div`
+    position: absolute;
+
+    width: 2px;
+    height: 100%;
+
+    background-color: black;
+
+    transition: .5s;
 `;
 
 const LogoItem = styled.div`
@@ -61,18 +138,20 @@ const LogoItem = styled.div`
 
     width: 100px;
     height: 100px;
-
-    border: 2px solid ${Hype[3]};
-    border-radius: .5rem;
-
     font-size: 36px;
+
+    box-sizing: border-box;
 `;
 
 const CopyRight = styled.h1`
     font-size: 1rem;
     line-height: 27px;
-    
-    align-self: flex-end;
+
+    text-align: end;
+
+    ${css`
+        animation: ${FadeInMove} 1s forwards;
+    `}
 `;
 
 export default SplashComponent;

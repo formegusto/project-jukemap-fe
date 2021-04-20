@@ -23,3 +23,31 @@ export const ContentLook = keyframes`
         box-shadow: 5px 5px 5px ${WhatTheHell[3]};
     }
 `;
+
+export const BoxFadeIn = keyframes`
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+`;
+
+export const FadeInMove = keyframes`
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    } to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+`;
+
+export const FadeInMoveBottom = keyframes`
+    from {
+        opacity: 0;
+        transform: translateX(50px) translateY(50px);
+    } to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+`;

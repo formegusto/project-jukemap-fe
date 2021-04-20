@@ -1,16 +1,29 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import JukeComponent from '../../components/main/JukeComponent';
 import JukeMapComponent from '../../components/main/JukeMapComponent';
 import SplashComponent from '../../components/main/SplashComponent'
 import audio from "../../assets/music/paul_sleepingBeauty.mp3";
 
 function MainContainer() {
+    const refSplashScreen = useRef<HTMLDivElement>(null);
     const refJukeScreen = useRef<HTMLDivElement>(null);
     const refJukeMapScreen = useRef<HTMLDivElement>(null);
     const refAudio = useRef<HTMLAudioElement>(null);
     const refSphere = useRef<HTMLDivElement>(null);
+    const refLogoIcon = useRef<HTMLDivElement>(null);
     const [content, setContent] = useState<any>(null);
     
+    useEffect(() => {
+        if(refLogoIcon.current){
+            refLogoIcon.current.addEventListener('animationend', () => {
+                setTimeout(() => {
+                    if(refSplashScreen.current)
+                        refSplashScreen.current.style.transform = 'translateY(100vh)';
+                }, 300);
+            })
+        }
+    }, []);
+
     const onJuke = useCallback((content:any) => {
         if(refJukeScreen.current){
             refJukeScreen.current.style.transform = "translateY(0)";
@@ -42,7 +55,6 @@ function MainContainer() {
     return (
         <>
             <audio ref={refAudio} src={audio}/>
-            <SplashComponent />
             <JukeMapComponent 
                 refScreen={refJukeMapScreen}
                 onJuke={onJuke}
@@ -52,6 +64,10 @@ function MainContainer() {
                 refSphere={refSphere}
                 closeJuke={closeJuke}
                 content={content}
+            />
+            <SplashComponent 
+                refScreen={refSplashScreen}
+                refIcon={refLogoIcon}
             />
         </>
     );

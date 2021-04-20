@@ -31,7 +31,7 @@ function AuthForm(props: Props) {
                             >{value}</FlowItem>
                             {   
                                 idx !== 3 &&
-                                <Line />
+                                <Line key={idx}/>
                             }
                         </>
                     )
