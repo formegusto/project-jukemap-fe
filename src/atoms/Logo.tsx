@@ -32,6 +32,8 @@ function Logo(props: Props) {
 }
 
 const StyledDiv = styled.div`
+    max-width: 300px;
+
     display: flex;
     flex-direction: column;
 

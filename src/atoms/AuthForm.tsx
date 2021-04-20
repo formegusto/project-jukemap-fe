@@ -53,8 +53,6 @@ const StyledDiv = styled.div`
 
     flex-direction: column;
     ${HiMelody};
-
-    transform: translateY(-100px);
 `;
 
 const FlowBlock = styled.div`
