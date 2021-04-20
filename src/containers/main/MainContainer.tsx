@@ -11,8 +11,9 @@ function MainContainer() {
     const refAudio = useRef<HTMLAudioElement>(null);
     const refSphere = useRef<HTMLDivElement>(null);
     const refLogoIcon = useRef<HTMLDivElement>(null);
+    const refJukeContent = useRef<HTMLDivElement>(null);
     const [content, setContent] = useState<any>(null);
-    
+
     useEffect(() => {
         if(refLogoIcon.current){
             refLogoIcon.current.addEventListener('animationend', () => {
@@ -29,8 +30,13 @@ function MainContainer() {
             refJukeScreen.current.style.transform = "translateY(0)";
             setContent(content);
             if(refAudio.current){
+                refAudio.current.src = content.music;
                 refAudio.current.currentTime = 0;
                 refAudio.current.play();
+                if(refJukeContent.current)
+                    refJukeContent.current.scrollTo({
+                        top: 0
+                    });
                 refAudio.current.addEventListener('timeupdate', () => {
                     if(refAudio.current){
                         const location = 
@@ -62,6 +68,7 @@ function MainContainer() {
             <JukeComponent
                 refScreen={refJukeScreen}
                 refSphere={refSphere}
+                refContent={refJukeContent}
                 closeJuke={closeJuke}
                 content={content}
             />

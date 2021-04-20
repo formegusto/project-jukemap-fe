@@ -7,6 +7,7 @@ import { BsBookmark, BsBoxArrowDown } from 'react-icons/bs';
 type Props = {
     refScreen: React.Ref<HTMLDivElement>;
     refSphere: React.Ref<HTMLDivElement>;
+    refContent: React.Ref<HTMLDivElement>;
     closeJuke: () => void;
     content: any;
 }
@@ -35,7 +36,9 @@ function JukeComponent(props: Props) {
                         <LineAudioBar>
                             <AudioSphere ref={props.refSphere}/>
                         </LineAudioBar>
-                        <Content dangerouslySetInnerHTML={{__html:props.content.content}}/>
+                        <Content 
+                            ref={props.refContent}
+                            dangerouslySetInnerHTML={{__html:props.content.content}}/>
                         <Line/>
                         <JukeFooter>
                             <BsBoxArrowDown 
