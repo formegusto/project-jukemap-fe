@@ -1,10 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { HiMelody } from '../style/Font';
 
 interface Props extends React.HTMLAttributes<HTMLInputElement> {
     labelText?: string;
     blockClassName?: string;
+    custom?: StyleProps;
 }
 
 function Input(props: Props) {
@@ -25,6 +26,13 @@ function Input(props: Props) {
     );
 }
 
+type StyleProps = {
+    width?: string;
+    radius?: string;
+    backgroundColor?: string;
+    fontColor?: string;
+}
+
 const InputBlock = styled.div` 
     ${HiMelody}
 `;
@@ -39,9 +47,13 @@ const StyledLabel = styled.label`
     margin: 0 0 7px;
 `;
 
-const StyledInput = styled.input`
-    width: 330px;
-    border-radius: .5rem;
+const StyledInput = styled.input<{custom?: StyleProps}>`
+    width: ${props => props.custom?.width ?
+        props.custom.width : 
+        "330px"};
+    border-radius: ${props => props.custom?.radius ?
+        props.custom.radius :
+        ".5rem"};
     border: none;
 
     height: 48px;
@@ -51,6 +63,18 @@ const StyledInput = styled.input`
 
     padding: .5rem;
     box-sizing: border-box;
+
+    ${props => props.custom?.fontColor && 
+        css`
+            color: ${props.custom.fontColor};
+        `
+    }
+
+    ${props => props.custom?.backgroundColor &&
+        css`
+            background-color: ${props.custom.backgroundColor};
+        `
+    }
 `;
 
 export default Input;

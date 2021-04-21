@@ -1,7 +1,7 @@
 import { PlayIcon } from "../dummyData";
 
 export const MakeCustomOverlayContent = (content: any, onJuke: any) => {
-    return "<div class='jukeblock'>" +
+    return "<div class='juke jukeblock'>" +
         `<div class='jukeart' data-value='${content.title}'>` +
             `<img src=${content.img} class='jukeart' alt='jukeart' />` +
             `<div class='artwrap'></div>`+

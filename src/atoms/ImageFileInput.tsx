@@ -6,7 +6,7 @@ interface Props extends React.HTMLAttributes<HTMLInputElement>{}
 
 function ImageFileInput(props: Props) {
     return (
-        <StyledDiv>
+        <>
             <FileLabel 
                 htmlFor={props.id}
             >
@@ -16,11 +16,9 @@ function ImageFileInput(props: Props) {
                 type="file"
                 {...props}
             />
-        </StyledDiv>
+        </>
     )
 }
-
-const StyledDiv = styled.div``;
 
 const FileLabel = styled.label`
     font-size: 1.5rem;

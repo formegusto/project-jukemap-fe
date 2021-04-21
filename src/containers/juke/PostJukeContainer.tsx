@@ -38,6 +38,7 @@ function PostJukeContainer() {
                     carouselScreen={carouselScreen}
                 />
                 <PostJukeComponent
+                    carouselScreen={carouselScreen}
                     refAlbumArt={refAlbumArt}
                     imageChange={imageChange}
                 />

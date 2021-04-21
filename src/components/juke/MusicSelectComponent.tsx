@@ -20,6 +20,9 @@ function MusicSelectComponent(props: Props) {
                     <InputBlock>
                         <Input 
                             className="keyword"
+                            custom={{
+                                width: "100%"
+                            }}
                         />
                     </InputBlock>
                     <AlbumBlock>
