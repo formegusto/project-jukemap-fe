@@ -31,6 +31,10 @@ const StyledDiv = styled.div`
     ${HiMelody};
     font-size: 48px;
     box-shadow: 4px 4px 4px rgba(0,0,0,.25);
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 24px;
+    }
 `;
 
 const TitleBlock = styled.div`
@@ -51,6 +55,11 @@ const LetterBlock = styled.div`
 
     box-sizing: border-box;
     padding: 0 .5rem;
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 50px;
+        height: 50px;
+    }
 `;
 
 const Letter = styled.h1`

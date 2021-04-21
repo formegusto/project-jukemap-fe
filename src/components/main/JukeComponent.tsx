@@ -116,6 +116,10 @@ const Jukist = styled.h5`
     text-align: start;
 
     ${HiMelody};
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 14px;
+    }
 `;
 
 const HeaderIconBlock = styled.div`
@@ -161,6 +165,10 @@ const JukeContentBlock = styled.div`
     justify-self: center;
 
     margin: 27px 0 0;
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 100%;
+    }
 `;
 
 const Title = styled.h1`
@@ -175,6 +183,10 @@ const Title = styled.h1`
     ${NotoSansKR}
 
     text-align: center;
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 1rem;
+    }
 `;
 
 const Content = styled.h2`
@@ -189,6 +201,10 @@ const Content = styled.h2`
     overflow-y: scroll;
     
     ${NotoSansKR}
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 1rem;
+    }
 `;
 
 const LineAudioBar = styled.div`

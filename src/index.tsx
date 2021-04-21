@@ -3,15 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import theme from './style/Theme';
 
 ReactDOM.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <App />
-  </BrowserRouter>
-  // <HashRouter>
-  //   <App/>
-  // </HashRouter>
+  // <ThemeProvider theme={theme}>
+  //   <BrowserRouter basename={process.env.PUBLIC_URL}>
+  //     <App />
+  //   </BrowserRouter>
+  // </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <HashRouter>
+      <App/>
+    </HashRouter>
+  </ThemeProvider>
   ,
   document.getElementById('root')
 );

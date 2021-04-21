@@ -11,6 +11,7 @@ export const PlayIcon = playbutton;
 
 export const ContentDatas = [
     {
+        id: 1,
         title: "나를 좋아해주는 사람들에게 최선을 다해야지",
         content: "&nbsp;그 동안 내가 좋아하는 사람들에게만 신경을 쓰는 습관이 있었다.<br/><br/>"
             + "&nbsp;그 습관의 결과는 끝없는 공허함을 내게 가져다 주었고, 나와의 배경이 다른 그들에게 하소연 할 수도 없었고, "
@@ -25,6 +26,7 @@ export const ContentDatas = [
         music: whosmindMusic,
     },
     {
+        id: 2,
         title: "너에게 내가 항상 좋은 추억이길 바래",
         content: "&nbsp;친구에게 좋아하게 된 사람에 대해서 이야기를 했다.<br/><br/>" 
             + "\"너가 좋다고 그렇게 행동하는 거, 그 사람한테는 실례가 될 수 있어\"<br/><br/>"
@@ -46,6 +48,7 @@ export const ContentDatas = [
         music: epilogue,
     },
     {
+        id: 3,
         title: "이유없는 눈물이 많았던 어느 날",
         content: "&nbsp;출근길에 마주친 유치원 버스에 옹기종기 앉아있는 아이들을 바라보고 눈물이 났다.<br/><br/>" 
             + "&nbsp;산책이 신난다며 쫄래쫄래 꼬리를 흔들며 순수한 표정을 지으며 걸어다니는 강아지를 바라보고 눈물이 났다.<br/><br/>"

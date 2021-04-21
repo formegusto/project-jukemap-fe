@@ -48,6 +48,10 @@ const CopyRightBlock = styled.div`
 
     padding: .25rem .25rem;
     text-align: end;
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 8px;
+    }
 `;
 
 const TitleBlock = styled.div`
@@ -61,6 +65,10 @@ const TitleBlock = styled.div`
     & > div:not(:last-child) {
         border-right: 2px solid black;
     }
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 24px;
+    }
 `;
 
 const LetterBlock = styled.div`
@@ -69,6 +77,11 @@ const LetterBlock = styled.div`
 
     padding: .5rem 0;
     box-sizing: border-box;
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 50px;
+        height: 50px;
+    }
 `;
 
 const Letter = styled.h1`

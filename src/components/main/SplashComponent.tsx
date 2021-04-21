@@ -55,6 +55,11 @@ const IconBlock = styled.div`
     & > img {
         width: 250px;
         height: 250px;
+
+        @media ${({theme}) => theme.device.mobile} {
+            width: 125px;
+            height: 125px;
+        }
     }
 `;
 const RightBlock = styled.div`
@@ -141,6 +146,12 @@ const LogoItem = styled.div`
     font-size: 36px;
 
     box-sizing: border-box;
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
 `;
 
 const CopyRight = styled.h1`
@@ -148,6 +159,11 @@ const CopyRight = styled.h1`
     line-height: 27px;
 
     text-align: end;
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: .5rem;
+        line-height: 14px;
+    }
 
     ${css`
         animation: ${FadeInMove} 1s forwards;

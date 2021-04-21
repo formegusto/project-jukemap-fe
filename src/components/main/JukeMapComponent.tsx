@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import LogoVertical from '../../atoms/LogoVertical';
 import RadiusBlock from '../../atoms/RadiusBlock';
 import { ContentDatas } from '../../dummyData';
-import { MakeCustomOverlayContent } from '../../lib/MakeCustomOverlay';
+import { MakeCustomOverlayContent, MakeCustomOverlayDom } from '../../lib/MakeCustomOverlay';
 import '../../style/Overlay.css';
 
 interface Props extends RouteComponentProps {
@@ -30,14 +30,15 @@ function JukeMapComponent(props: Props) {
             ContentDatas.forEach((content) => {
                 const customOverlay = new window.kakao.maps.CustomOverlay({
                     position: content.position,
-                    content: MakeCustomOverlayContent(content, props.onJuke),
+                    content: MakeCustomOverlayDom(content, props.onJuke),
                     xAnchor: 0.5,
                     yAnchor: 0.5,
+                    clickable: true,
                 });
                 customOverlay.setMap(jukeMap);
                 
-                const jukeblocks = document.querySelectorAll('.jukeblock');
-                jukeblocks[jukeblocks.length - 1].addEventListener('click', () => props.onJuke(content));
+                // const jukeblocks = document.querySelectorAll('.jukeblock');
+                // jukeblocks[jukeblocks.length - 1].addEventListener('click', () => props.onJuke(content));
                 
             });
         }

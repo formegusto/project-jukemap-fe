@@ -99,6 +99,10 @@ const FormBlock = styled.div`
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 
     overflow-x: hidden;
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 100%;
+    }
 `;
 
 const FormGroup = styled.div`
@@ -109,7 +113,7 @@ const FormGroup = styled.div`
     transform: translateX(0%);
 
     & > * {
-        width: 600px;
+        width: 100%;
         position: absolute;
         top: 0;
     }
