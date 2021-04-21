@@ -88,16 +88,16 @@ const JukeArtBlock = styled.div`
     @media ${({theme}) => theme.device.mobile} {
         width: 100px;
         height: 100px;
-    }
 
-    & > .jukeart {
-        width: 100px;
-        height: 100px;
-    }
+        & > .jukeart {
+            width: 100px;
+            height: 100px;
+        }
 
-    & > .artwrap {
-        width: 100px;
-        height: 100px;
+        & > .artwrap {
+            width: 100px;
+            height: 100px;
+        }
     }
 `;
 
@@ -113,7 +113,7 @@ const ConfirmContent = styled.div`
     position: absolute;
 
     z-index: 2;
-    transform: translateY(-70px);
+    transform: translateY(-130px);
 
     display: flex;
     justify-content: center;
@@ -129,6 +129,8 @@ const ConfirmContent = styled.div`
     @media ${({theme}) => theme.device.mobile} {
         width: 130px;
         height: 130px;
+
+        transform: translateY(-70px);
     }
 `;
 
