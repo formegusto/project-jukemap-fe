@@ -5,18 +5,11 @@ import AuthForm from '../../atoms/AuthForm';
 function JoinComponent() {
     return (
         <AuthForm>
-            <UserInfoBlock>
-                1
-            </UserInfoBlock>
-            <UserInfoBlock>
-                2
-            </UserInfoBlock>
-            <UserInfoBlock>
-                3
-            </UserInfoBlock>
-            <UserInfoBlock>
-                4
-            </UserInfoBlock>
+            {[6,7,8,9].map((v) => 
+                <UserInfoBlock key={v}>
+                    {v}
+                </UserInfoBlock>
+            )}
         </AuthForm>
     );
 }

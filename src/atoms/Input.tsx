@@ -75,6 +75,10 @@ const StyledInput = styled.input<{custom?: StyleProps}>`
             background-color: ${props.custom.backgroundColor};
         `
     }
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 250px;
+    }
 `;
 
 export default Input;

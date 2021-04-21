@@ -65,6 +65,10 @@ const ContentBlock = styled.div`
 const Title = styled.h1`
     font-size: 36px;
     margin: 0 0 36px;
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 18px;
+    }
 `;
 
 const MusicListBlock = styled.div`
@@ -78,6 +82,11 @@ const MusicListBlock = styled.div`
     background-color: ${Hype[2]};
 
     box-shadow: 4px 4px 4px rgb(0,0,0,0.25);
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 100%;
+        height: 600px;
+    }
 `;
 
 const AlbumBlock = styled.div`

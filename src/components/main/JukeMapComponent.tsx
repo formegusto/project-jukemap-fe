@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import LogoVertical from '../../atoms/LogoVertical';
 import RadiusBlock from '../../atoms/RadiusBlock';
 import { ContentDatas } from '../../dummyData';
-import { MakeCustomOverlayContent, MakeCustomOverlayDom } from '../../lib/MakeCustomOverlay';
+import { MakeCustomOverlayDom } from '../../lib/MakeCustomOverlay';
 import '../../style/Overlay.css';
 
 interface Props extends RouteComponentProps {

@@ -13,6 +13,7 @@ function ConfirmJukeComponent(props: RouteComponentProps) {
         if(block) {
             const options = {
                 center: new window.kakao.maps.LatLng(33.450701, 126.570667),
+                draggable: false,
                 level: 3
             };
 
@@ -51,6 +52,11 @@ const DescHeader = styled.h1`
     margin: 0 0 90px;
 
     ${HiMelody};
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 1.5rem;
+        margin: 0 0 90px;
+    }
 `;
 
 const ConfirmBlock = styled.div`
@@ -78,6 +84,21 @@ const JukeArtBlock = styled.div`
         width: 200px;
         height: 200px;
     }
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 100px;
+        height: 100px;
+    }
+
+    & > .jukeart {
+        width: 100px;
+        height: 100px;
+    }
+
+    & > .artwrap {
+        width: 100px;
+        height: 100px;
+    }
 `;
 
 const ConfirmContentBlock = styled.div`
@@ -92,7 +113,7 @@ const ConfirmContent = styled.div`
     position: absolute;
 
     z-index: 2;
-    transform: translateY(-120px);
+    transform: translateY(-70px);
 
     display: flex;
     justify-content: center;
@@ -104,6 +125,11 @@ const ConfirmContent = styled.div`
     background-color: #f2e8df;
 
     transition: 0;
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 130px;
+        height: 130px;
+    }
 `;
 
 const JukeMap= styled.div`
@@ -111,6 +137,11 @@ const JukeMap= styled.div`
     height: 400px;
 
     border-radius: 100%;
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 200px;
+        height: 200px;
+    }
 `;
 
 export default withRouter(ConfirmJukeComponent);

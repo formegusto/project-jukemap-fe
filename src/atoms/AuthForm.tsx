@@ -25,7 +25,7 @@ function AuthForm(props: Props) {
                     (value,idx) => 
                         <>
                             <FlowItem 
-                                key={idx}
+                                key={value}
                                 active={active >= idx}    
                                 onClick={() => carouselChange(idx)}
                             >{value}</FlowItem>

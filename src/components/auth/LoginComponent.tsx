@@ -81,7 +81,6 @@ const LoginForm = styled.form`
 `;
 
 const LinkBlock = styled.div`
-
     & > a {
         box-sizing: border-box;
         font-size: 14px;

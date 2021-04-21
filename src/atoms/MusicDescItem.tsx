@@ -38,6 +38,11 @@ const AlbumArt = styled.img`
     width: 60px;
     height: 60px;
     border-radius: 100%;
+
+    @media ${({theme}) => theme.device.mobile} {
+        width: 40px;
+        height: 40px;
+    }
 `;
 
 const ContentBlock = styled.div`
@@ -49,11 +54,21 @@ const Title = styled.h1`
     line-height: 23px;
 
     margin: 0 0 3px 0;
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 14px;
+        line-height: 16px;
+    }
 `;
 
 const Artist = styled.h2`
     font-size: 14px;
     line-height: 18px;
+
+    @media ${({theme}) => theme.device.mobile} {
+        font-size: 10px;
+        line-height: 14px;
+    }
 `
 
 export default MusicDescItem;
