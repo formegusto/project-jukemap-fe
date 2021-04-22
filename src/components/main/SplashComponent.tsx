@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import styled, { css } from 'styled-components';
 import { HiMelody } from '../../style/Font';
 import { Hype, WhatTheHell } from '../../style/Palette';
 import iamformegusto from '../../assets/icons/iamformegusto.png';
 import { LeftLineAni, RightLineAni } from '../../animations/LineAni';
 import { BoxFadeIn, FadeInMove, FadeInMoveBottom } from '../../animations/BoxAni';
+import LoadingScreen from '../../atoms/Loading';
+
+const LazyImage = lazy(() => import('../../atoms/LazyImage'));
 
 type Props = {
     refScreen: React.Ref<HTMLDivElement>;
@@ -13,35 +16,44 @@ type Props = {
 
 function SplashComponent(props: Props) {
     return (
-        <SplashBlock
-            ref={props.refScreen}
+        <Suspense
+            fallback={
+                <LoadingScreen />
+            }
         >
-            <ContentBlock>
-                <LogoBlock>
-                    <LogoItem className="item">
-                        주
-                    </LogoItem>
-                    <LogoItem className="item">
-                        크
-                    </LogoItem>
-                    <LogoItem className="item">
-                        맵
-                    </LogoItem>
-                    <LogoVerticalLine className="line left"/>
-                    <LogoVerticalLine className="line right"/>
-                </LogoBlock>
-                <RightBlock>
-                    <IconBlock
-                        ref={props.refIcon}
-                    >
-                        <img src={iamformegusto} alt='logo 넣을 거 없어서 넣었음' />
-                    </IconBlock>
-                    <CopyRight>
-                        Copyright &copy; 2021 by 경혜 태헌
-                    </CopyRight>
-                </RightBlock>
-            </ContentBlock>
-        </SplashBlock>
+            <SplashBlock
+                ref={props.refScreen}
+            >
+                <ContentBlock>
+                    <LogoBlock>
+                        <LogoItem className="item">
+                            주
+                        </LogoItem>
+                        <LogoItem className="item">
+                            크
+                        </LogoItem>
+                        <LogoItem className="item">
+                            맵
+                        </LogoItem>
+                        <LogoVerticalLine className="line left"/>
+                        <LogoVerticalLine className="line right"/>
+                    </LogoBlock>
+                    <RightBlock>
+                        <IconBlock
+                            ref={props.refIcon}
+                        >
+                            <LazyImage 
+                                src={iamformegusto}
+                                alt="예비 로고 이미지"
+                            />
+                        </IconBlock>
+                        <CopyRight>
+                            Copyright &copy; 2021 by 경혜 태헌
+                        </CopyRight>
+                    </RightBlock>
+                </ContentBlock>
+            </SplashBlock>
+        </Suspense>
     );
 }
 

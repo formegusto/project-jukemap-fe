@@ -14,6 +14,7 @@ function ImageFileInput(props: Props) {
             </FileLabel>
             <FileInput
                 type="file"
+                accept="image/*"
                 {...props}
             />
         </>

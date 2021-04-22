@@ -31,6 +31,7 @@ type StyleProps = {
     radius?: string;
     backgroundColor?: string;
     fontColor?: string;
+    preventMediaQuery?: boolean;
 }
 
 const InputBlock = styled.div` 
@@ -76,8 +77,12 @@ const StyledInput = styled.input<{custom?: StyleProps}>`
         `
     }
 
-    @media ${({theme}) => theme.device.mobile} {
-        width: 250px;
+    ${props => !props.custom?.preventMediaQuery &&
+        css`
+            @media ${({theme}) => theme.device.mobile} {
+                width: 250px;
+            }   
+        `
     }
 `;
 

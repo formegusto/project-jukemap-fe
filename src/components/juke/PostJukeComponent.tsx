@@ -12,6 +12,8 @@ type Props = {
     carouselScreen: (pageIdx: number) => void;
     imageChange: (e: React.FormEvent<HTMLDivElement>) => void;
     refAlbumArt: React.Ref<HTMLImageElement>;
+    refSphere: React.Ref<HTMLDivElement>;
+    changeAudioState: () => void;
 }
 
 function PostJukeComponent(props: Props) {
@@ -28,6 +30,7 @@ function PostJukeComponent(props: Props) {
                 <IconBlock>
                     <BsPlayFill 
                         className="playbtn"
+                        onClick={props.changeAudioState}
                     />
                     <ImageFileInput 
                         id="img"
@@ -41,9 +44,14 @@ function PostJukeComponent(props: Props) {
                         width: "100%",
                         radius: "0",
                         backgroundColor: "rgba(204, 204, 204, 0.1)",
-                        fontColor: "rgb(255,255,255)"
+                        fontColor: "rgb(255,255,255)",
+                        preventMediaQuery: true
                     }} />
-                <Line />
+                <LineAudioBar>
+                    <AudioSphere 
+                        ref={props.refSphere}
+                    />
+                </LineAudioBar>
                 <TextArea 
                     blockClassName="inputblock"
                     placeholder="내용을 입력해주세요."
@@ -68,6 +76,32 @@ function PostJukeComponent(props: Props) {
         </PostBlock>
     )
 }
+
+const AudioSphere = styled.div`
+    position: absolute;
+
+    top: -0.5rem;
+    
+    transition: .3s;
+    width: 1rem;
+    height: 1rem;
+    
+    background-color: rgb(255,255,255);
+
+    border-radius: 100%;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
+const LineAudioBar = styled.div`
+    position: relative;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: rgb(255,255,255);
+
+    margin: 20px 0;
+`;
 
 const Line = styled.div`
     width: 100%;
