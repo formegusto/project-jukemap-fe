@@ -96,6 +96,10 @@ const AlbumBlock = styled.div`
 
     box-sizing: border-box;
     padding: 1rem 0;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 export default MusicSelectComponent;

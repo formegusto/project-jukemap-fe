@@ -202,6 +202,10 @@ const Content = styled.h2`
     
     ${NotoSansKR}
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     @media ${({theme}) => theme.device.mobile} {
         font-size: 1rem;
     }
