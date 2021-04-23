@@ -1,9 +1,9 @@
-import whosmind from './assets/albumarts/whosmind.jpg';
+import okinawa from './assets/albumarts/okinawa.jpg';
 import playbutton from './assets/icons/playbutton.png';
 import lilac from './assets/albumarts/lilac.jpg';
 import imfine from './assets/albumarts/imfine.JPG';
 
-import whosmindMusic from './assets/music/whosmind.mp3';
+import okinawaMusic from './assets/music/okinawa.mp3';
 import epilogue from './assets/music/epilogue.mp3';
 import imfineMusic from './assets/music/imfine.mp3';
 
@@ -30,9 +30,9 @@ export const ContentDatas = [
             + "&nbsp;오늘의 행복을 정리하자면 잔잔하고 일상적인 행복이었던 것 같다. "
             + "항상 오늘처럼 소소한 것에 행복을 느끼면서 살고 싶다. 그러면 인생이 정말 즐거울텐데.<br/><br/>"
             + "&nbsp;집 가서 언능 치킨 먹어야지!!<br/><br/>",
-        img: whosmind,
-        position: new window.kakao.maps.LatLng(33.450701, 126.570667),
-        music: whosmindMusic,
+        img: okinawa,
+        music: okinawaMusic,
+        position: new window.kakao.maps.LatLng(33.450701, 126.570667)
     },
     {
         id: 2,

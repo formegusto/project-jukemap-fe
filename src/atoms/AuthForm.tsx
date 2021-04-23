@@ -100,6 +100,10 @@ const FormBlock = styled.div`
 
     overflow-x: hidden;
 
+    &-::-webkit-scrollbar {
+        display: none;
+    }
+
     @media ${({theme}) => theme.device.mobile} {
         width: 100%;
     }
