@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/project-jukemap-fe/static/css/main.a7de7d55.chunk.css",
-    "main.js": "/project-jukemap-fe/static/js/main.776eab50.chunk.js",
-    "main.js.map": "/project-jukemap-fe/static/js/main.776eab50.chunk.js.map",
+    "main.css": "/project-jukemap-fe/static/css/main.c3aa2d73.chunk.css",
+    "main.js": "/project-jukemap-fe/static/js/main.842a7f92.chunk.js",
+    "main.js.map": "/project-jukemap-fe/static/js/main.842a7f92.chunk.js.map",
     "runtime-main.js": "/project-jukemap-fe/static/js/runtime-main.be3cf19e.js",
     "runtime-main.js.map": "/project-jukemap-fe/static/js/runtime-main.be3cf19e.js.map",
     "static/js/2.67946f36.chunk.js": "/project-jukemap-fe/static/js/2.67946f36.chunk.js",
@@ -12,13 +12,15 @@
     "static/js/4.cf233d8f.chunk.js": "/project-jukemap-fe/static/js/4.cf233d8f.chunk.js",
     "static/js/4.cf233d8f.chunk.js.map": "/project-jukemap-fe/static/js/4.cf233d8f.chunk.js.map",
     "index.html": "/project-jukemap-fe/index.html",
-    "static/css/main.a7de7d55.chunk.css.map": "/project-jukemap-fe/static/css/main.a7de7d55.chunk.css.map",
+    "static/css/main.c3aa2d73.chunk.css.map": "/project-jukemap-fe/static/css/main.c3aa2d73.chunk.css.map",
     "static/js/2.67946f36.chunk.js.LICENSE.txt": "/project-jukemap-fe/static/js/2.67946f36.chunk.js.LICENSE.txt",
     "static/media/epilogue.661e1f15.mp3": "/project-jukemap-fe/static/media/epilogue.661e1f15.mp3",
     "static/media/iamformegusto.cc8896dd.png": "/project-jukemap-fe/static/media/iamformegusto.cc8896dd.png",
     "static/media/imfine.7eec0139.mp3": "/project-jukemap-fe/static/media/imfine.7eec0139.mp3",
     "static/media/imfine.80e28ed5.JPG": "/project-jukemap-fe/static/media/imfine.80e28ed5.JPG",
     "static/media/lilac.f9db6873.jpg": "/project-jukemap-fe/static/media/lilac.f9db6873.jpg",
+    "static/media/okinawa.86d8878b.mp3": "/project-jukemap-fe/static/media/okinawa.86d8878b.mp3",
+    "static/media/okinawa.ad869068.jpg": "/project-jukemap-fe/static/media/okinawa.ad869068.jpg",
     "static/media/paul_sleepingBeauty.3f59e038.mp3": "/project-jukemap-fe/static/media/paul_sleepingBeauty.3f59e038.mp3",
     "static/media/whosmind.a38e1ec6.mp3": "/project-jukemap-fe/static/media/whosmind.a38e1ec6.mp3",
     "static/media/whosmind.a5e116cb.jpg": "/project-jukemap-fe/static/media/whosmind.a5e116cb.jpg"
@@ -26,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.be3cf19e.js",
     "static/js/2.67946f36.chunk.js",
-    "static/css/main.a7de7d55.chunk.css",
-    "static/js/main.776eab50.chunk.js"
+    "static/css/main.c3aa2d73.chunk.css",
+    "static/js/main.842a7f92.chunk.js"
   ]
 }
